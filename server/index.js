@@ -1,14 +1,12 @@
 import express from 'express'
-import { Sequelize } from 'sequelize'
-import {Feedback, sequelize} from './models/feedback.js'
+import {Feedback} from './models/feedback.js'
+import sequelize from './db.js'
 import cors from 'cors'
 import feedbackRouter from './routes/feedback-router.js'
 
-// const sequelize = new Sequelize('postgres://postgres:1111@localhost:5432/test_task')
-
 try {
     await sequelize.authenticate();
-    await sequelize.sync({ force: true });
+    await sequelize.sync();
     console.log("All models were synchronized successfully.");
 } catch (error) {
     console.error('Unable to connect to the database:', error);

@@ -1,5 +1,5 @@
-import { Sequelize, DataTypes } from 'sequelize'
-export const sequelize = new Sequelize('postgres://postgres:1111@localhost:5432/test_task');
+import { DataTypes } from 'sequelize'
+import sequelize from '../db.js'
 
 export const Feedback = sequelize.define('feedback', {
   firstName: {

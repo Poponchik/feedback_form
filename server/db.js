@@ -1,11 +1,4 @@
-import Pool from 'pg'
+import Sequelize from 'sequelize'
 
-const pool = new Pool({
-    user: 'postgress',
-    password: '1111',
-    host: 'localhost',
-    port: 5432,
-    database: ""
-})
-
-module.exports = pool
+const sequelize = new Sequelize('postgres://postgres:1111@localhost:5432/test_task');
+export default sequelize
